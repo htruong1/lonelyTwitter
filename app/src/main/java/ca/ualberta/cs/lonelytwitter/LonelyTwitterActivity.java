@@ -36,13 +36,35 @@ public class LonelyTwitterActivity extends Activity {
 
 		saveButton.setOnClickListener(new View.OnClickListener() {
 
-			public void onClick(View v) {
-				setResult(RESULT_OK);
-				String text = bodyText.getText().toString();
-				saveInFile(text, new Date(System.currentTimeMillis()));
-				finish();
 
-			}
+
+				public void onClick(View v){
+					setResult(RESULT_OK);
+					String text = bodyText.getText().toString();
+
+					Tweet tweet = new ImportantTweet("test string");
+					NormalTweet normalTweet = new NormalTweet("test string");
+					HappyMood happymood = new HappyMood(":D");
+					SadMood sadmood = new SadMood(":(");
+					DepressingMood depressingmood = new DepressingMood(";(");
+					try {
+						if (tweet.isImportant())
+
+							tweet.setMessage("better string");
+
+					} catch(Exception e) {
+						throw new RuntimeException();
+					}
+
+					String string = tweet.getMessage();
+					ArrayList<Tweet> tweetList = new ArrayList<Tweet>();
+					tweetList.add(tweet);
+					tweetList.add(normalTweet);
+
+					saveInFile(text, new Date(System.currentTimeMillis()));
+					finish();
+				}
+
 		});
 	}
 
