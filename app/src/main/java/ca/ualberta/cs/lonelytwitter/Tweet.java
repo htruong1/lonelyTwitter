@@ -44,6 +44,9 @@ public abstract class Tweet implements Tweetable{
         this.message = message;
     }
     public abstract Boolean isImportant();
-
+    @Override
+    public String toString(){
+        return date.toString() + " | " + message;
+    }
 
 }
