@@ -6,7 +6,15 @@ import java.util.Date;
  * Created by htruong1 on 1/19/17.
  */
 
+/**
+ * A tweet class that uses the TweeTooLongException if the length is too long,
+ * gets the tweet and gets importance of tweets (true or false is returned from its children
+ * class
+ */
 public abstract class Tweet implements Tweetable{
+    /**
+     * Abstract class that sends out the string and shows it
+     */
     private Date date;
     private String message;
     private ArrayList<CurrentMood> moodList;

@@ -8,8 +8,17 @@ import java.util.Date;
  * Created by htruong1 on 1/19/17.
  */
 
-public class ImportantTweet extends Tweet {
+/**
+ * A class extending from Tweet that determines if a tweet is important by returning
+ * a boolena value true
+ */
 
+
+public class ImportantTweet extends Tweet {
+    /**
+     * Returns boolean value true for important tweet
+     * @param message
+     */
     public ImportantTweet(String message) {
         super(message);
     }
