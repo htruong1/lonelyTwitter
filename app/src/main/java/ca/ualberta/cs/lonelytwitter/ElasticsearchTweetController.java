@@ -59,7 +59,7 @@ public class ElasticsearchTweetController {
             ArrayList<NormalTweet> tweets = new ArrayList<NormalTweet>();
 
 
-            String query = "" +search_parameters[0] +"";
+            String query = "" +search_parameters[0] +""; //should be empty string I believe
 
             /*TO FILL IN*/
 
@@ -67,7 +67,7 @@ public class ElasticsearchTweetController {
 
 
             // TODO Build the query
-            Search search = new Search.Builder(search_parameters[0])
+            Search search = new Search.Builder(search_parameters[0]) //new search should be Search.Builder(query)
                     .addIndex("testing")
                     .addType("tweet").build();
 
