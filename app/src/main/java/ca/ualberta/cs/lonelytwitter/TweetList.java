@@ -9,14 +9,14 @@ import static android.R.id.list;
 /**
  * Created by watts1 on 1/28/16.
  */
-public class TweetList {
+public class TweetList { //uses hasTweets to check the return value to see if there is duplicates or not
     private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
     private List orderList = tweets;
     public void add(Tweet tweet) {
         if (hasTweet(tweet) == false) {
             tweets.add(tweet);
         } else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(); //throws the exception based on specs
         }
     }
 
@@ -35,7 +35,7 @@ public class TweetList {
         return tweets.get(index);
     }
     public Integer getCount(){
-        return tweets.size();
+        return tweets.size(); //returns the size of the array
     }
     public List tweetOrder(){
         Collections.sort(orderList); //TA suggested the use of CollectionsSort.
